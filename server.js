@@ -16,16 +16,16 @@ http.createServer(function(req,res){
 
   console.log("Requested for:" + pathname + " received")
 //log bellow is executed everytime a page is requested
-  var content = route(handle, pathname);
+  var content = route(handle, pathname, res);
 
-  //once request is received res.writeHead sends a http status of 200 with Content-Type
-  res.writeHead(200, {"Content-Type": "text/plain"});
-
-  // res.write sends "hello World" in the http response body.
-  res.write(content);
-
-  // res.end finishes the respose.
-  res.end();
+  // //once request is received res.writeHead sends a http status of 200 with Content-Type
+  // res.writeHead(200, {"Content-Type": "text/plain"});
+  //
+  // // res.write sends "hello World" in the http response body.
+  // res.write(content);
+  //
+  // // res.end finishes the respose.
+  // res.end();
 
 }).listen(8888);
 
